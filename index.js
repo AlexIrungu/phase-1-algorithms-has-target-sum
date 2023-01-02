@@ -1,14 +1,32 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  const seedNumbers = new Set()
+  //initialize an empty set
+  for(const number of array){
+    const complement = target - number
+
+    //.has returns triue if the set includes the complement
+    if(seedNumbers.has(complement))
+    return true;
+    //.add adds the number to the set
+    seedNumbers.add(number)
+  }
+  return false
+ 
 }
+
+
+
 
 /* 
   Write the Big O time complexity of your function here
 */
 
-/* 
+ /* 
   Add your pseudocode here
 */
+
+
 
 /*
   Add written explanation of your solution here
